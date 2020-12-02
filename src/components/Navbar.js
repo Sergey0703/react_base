@@ -7,7 +7,10 @@ export const Navbar=()=>(
          Note App
      </div>
      <ul className="navbar-nav">
-         <li className="nav-item "><NavLink className="nav-link" to="/" exact>Home </NavLink></li>
+         <li className="nav-item "><NavLink className="nav-link" to="/" exact>Train words </NavLink></li>
+         <li className="nav-item "><NavLink className="nav-link" to="/home" exact>Home </NavLink></li>
+         <li className="nav-item "><NavLink className="nav-link" to="/add" exact>Add </NavLink></li>
+         <li className="nav-item "><NavLink className="nav-link" to="/admin" exact>Admin </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/about" exact>About </NavLink></li>
 
 
