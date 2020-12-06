@@ -7,6 +7,7 @@ import {Add} from './pages/Add';
 import Admin from './pages/Admin';
 
 import {TrainWords} from './pages/TrainWords'
+import {TrainWords2} from './pages/TrainWords2'
 
 import {Navbar} from "./components/Navbar";
 import {Alert} from "./components/Alert";
@@ -24,6 +25,7 @@ function App() {
       <Alert/>
       <Switch>
         <Route path ="/" exact component={TrainWords}/>
+        <Route path ="/trainwords2" exact component={TrainWords2}/>
         <Route path ="/home" exact component={Home}/>
         <Route path ="/add" exact component={Add}/>
         <Route path ="/admin" exact component={Admin}/>

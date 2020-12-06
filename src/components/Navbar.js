@@ -8,6 +8,7 @@ export const Navbar=()=>(
      </div>
      <ul className="navbar-nav">
          <li className="nav-item "><NavLink className="nav-link" to="/" exact>Train words </NavLink></li>
+         <li className="nav-item "><NavLink className="nav-link" to="/trainwords2" exact>Train words2 </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/home" exact>Home </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/add" exact>Add </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/admin" exact>Admin </NavLink></li>

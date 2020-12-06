@@ -12,6 +12,9 @@
   font-size: 20px;
   color: green;
 }
+li {
+  list-style-type: none; /* Убираем маркеры */
+}
 
 .App-logo {
   height: 40vmin;
