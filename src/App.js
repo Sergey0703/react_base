@@ -14,6 +14,8 @@ import {Alert} from "./components/Alert";
 import {AlertState} from "./context/alert/AlertState";
 import {FirebaseState} from "./context/firebase/FirebaseState";
 
+//<div className="container pt-5" >
+
 
 function App() {
   return (
@@ -21,7 +23,8 @@ function App() {
       <AlertState>
       <BrowserRouter>
         <Navbar/>
-    <div className="container pt-4" >
+
+    <main role='main' className='container pt-5' >
       <Alert/>
       <Switch>
         <Route path ="/" exact component={TrainWords}/>
@@ -32,7 +35,8 @@ function App() {
         <Route path ="/about" exact component={About}/>
 
       </Switch>
-    </div>
+    </main>
+
       </BrowserRouter>
         </AlertState>
       </FirebaseState>

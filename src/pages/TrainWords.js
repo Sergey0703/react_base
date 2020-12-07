@@ -2,19 +2,33 @@ import React, {useEffect,useState,Fragment} from 'react';
 import firebase from '../firebase';
 import {WordStatus} from '../components/WordStatus';
 import {WordsAllToday} from '../components/WordsAllToday'
+import {WordSound} from '../components/WordSound'
 
 export const TrainWords=()=>{
     const [words,setWords]=useState([]);
     const [statusTrain,setStatus]=useState();
     const [showDiv,setShowDiv]=useState(false);
-
+   // const [wordAudio, setWordAudio]=useState();
+    //const[wordsound,setSound]=useState(new Audio());
     useEffect(()=>{
         console.log('useEffect')
             fetchData();
         console.log('EndUseEffect')
-     },[])
+      //  setSound (document.getElementById('wordsound'));
+     //   setWordAudio (document.getElementById('wordAudio'));
+       // wordsound.addEventListener('click', fPlay, false);
+
+    },[]);
 
 
+
+
+    //componentDidMount(){
+        // When the component is mounted, add your DOM listener to the "nv" elem.
+        // (The "nv" elem is assigned in the render function.)
+        //this.nv.addEventListener("nv-enter", this.handleNvEnter);
+       // sound.addEventListener('click', fPlay, false);
+    //}
     const fetchData = async () => {
         const db = firebase.firestore();
         console.log('fetchData=',words)
@@ -55,15 +69,14 @@ export const TrainWords=()=>{
    //const showHide=()=>{
    //    setShowDiv(false );
    //}
-
+   // <source src={ word.sound|replace({'sound:': ""}) } type="audio/mpeg">
     return (
         <>
-
-                 <WordsAllToday/>
+               <WordsAllToday/>
                  <ul>
             {words.map(word=>(
                          <li key={word.id}>
-                             {console.log('word=',word)}
+                             {console.log('word1=',word)}
                              <span className={word.train1?' circlegreen ':'circlered'} ></span>
 
                             {word.trainDate1.seconds>0?
@@ -71,6 +84,9 @@ export const TrainWords=()=>{
                                     :""}
                                     <br/>
                             {word.word}
+
+                            <WordSound word={word}/>
+
                                      <br/>
                              {showDiv ? <div>{word.translate}</div> : null}
 
@@ -84,6 +100,11 @@ export const TrainWords=()=>{
             ))}
 
                  </ul>
+
+            <script>
+
+
+            </script>
         </>
     )
 
