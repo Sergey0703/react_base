@@ -4,6 +4,11 @@ import {WordStatus} from '../components/WordStatus';
 import {WordsAllToday} from '../components/WordsAllToday'
 import {WordSound} from '../components/WordSound'
 
+
+//db.collection("cities").get().then(function(querySnapshot) {
+//    console.log(querySnapshot.numChildren());
+//});
+
 export const TrainWords=()=>{
     const [words,setWords]=useState([]);
     const [statusTrain,setStatus]=useState();
@@ -31,16 +36,28 @@ export const TrainWords=()=>{
     //}
     const fetchData = async () => {
         const db = firebase.firestore();
-        console.log('fetchData=',words)
+        console.log('fetchData=', words)
         const data = await db.collection("words")
             .orderBy('trainDate1', 'asc') //desc asc
             .limit(1)
             .get();
-           // .then((docRef) => { console.log(docRef.data) }
-       // data.docs.map(doc=>({...doc.data(),id: doc.id }));
+        // .then((docRef) => { console.log(docRef.data) }
+        // data.docs.map(doc=>({...doc.data(),id: doc.id }));
 
         // console.log('ddd=',data.docs.map(doc=>{})); // LA city object with key-value pair
-        setWords(data.docs.map(doc => ({ ...doc.data(),id: doc.id })))
+        setWords(data.docs.map(doc => ({...doc.data(), id: doc.id})))
+        //const elements=todos.map((doc)=>{
+         //      return(<li key ={doc.id}>
+          //     <TodoList label={doc.label}/>
+          //     </li>)
+         //}
+        //const elements=todos.map((doc)=>{
+        //return (<li>
+        //<TodoList{...doc}/>
+        // </li>
+        //}
+        //{elements}
+        //
         //console.log('data=',data);
          // );
         //setWords(data.docs);
@@ -101,10 +118,7 @@ export const TrainWords=()=>{
 
                  </ul>
 
-            <script>
 
-
-            </script>
         </>
     )
 

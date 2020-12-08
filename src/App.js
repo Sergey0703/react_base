@@ -8,6 +8,7 @@ import Admin from './pages/Admin';
 
 import {TrainWords} from './pages/TrainWords'
 import {TrainWords2} from './pages/TrainWords2'
+import {WordsToday}  from './pages/WordsToday'
 
 import {Navbar} from "./components/Navbar";
 import {Alert} from "./components/Alert";
@@ -29,6 +30,7 @@ function App() {
       <Switch>
         <Route path ="/" exact component={TrainWords}/>
         <Route path ="/trainwords2" exact component={TrainWords2}/>
+        <Route path ="/wordstoday" exact component={WordsToday}/>
         <Route path ="/home" exact component={Home}/>
         <Route path ="/add" exact component={Add}/>
         <Route path ="/admin" exact component={Admin}/>
